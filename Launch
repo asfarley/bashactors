@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+TOPDIR=$(pwd)
+for ACTOR in */ ; do
+cd $ACTOR
+x-terminal-emulator -e ./Actor
+cd $TOPDIR
+done

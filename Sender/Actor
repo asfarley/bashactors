@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+RUN=1
+
+while [ $RUN = 1 ]
+do
+
+#Send message
+echo Hello World >> ../Receiver/Inbox/$(uuidgen)
+sleep 2
+
+#Check message box
+MESSAGE=`ls -t ./Inbox | head -1`
+if [ ! -z "$MESSAGE" ]; then
+
+#Read message
+LINE=$(head -n 1 ./Inbox/$MESSAGE)
+
+#Delete message
+rm ./Inbox/$MESSAGE
+
+#Handle message
+if [ $LINE = "stop" ]; then
+exit 0;
+fi
+
+fi
+done

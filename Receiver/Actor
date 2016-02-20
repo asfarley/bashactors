@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+RUN=1
+
+#Main loop
+while [ $RUN = 1 ]
+do
+
+#Check message box
+MESSAGE=`ls -t ./Inbox | head -1`
+if [ ! -z "$MESSAGE" ]; then
+
+#Read message
+LINE=$(head -n 1 ./Inbox/$MESSAGE)
+
+#Delete message
+rm ./Inbox/$MESSAGE
+
+#Handle message
+if [ "$LINE" = "stop" ]; then
+exit 0
+fi
+echo $LINE
+
+fi
+done
