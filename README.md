@@ -11,7 +11,7 @@ To stop:
 ./Stop
 ```
 
-A minimal implemention of the Actor model using Bash scripting. 
+A minimal implemention of the [Actor model](https://en.wikipedia.org/wiki/Actor_model) using Bash scripting. 
 
 The root folder contains one (and only one) folder for each actor. Each actor's behavior is described by a single Bash script. Messages are passed by creating files under each actor's Inbox subdirectory. 
 
