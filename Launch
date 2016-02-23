@@ -2,6 +2,14 @@
 TOPDIR=$(pwd)
 for ACTOR in */ ; do
 cd $ACTOR
-x-terminal-emulator -e ./Actor
+
+if type "x-terminal-emulator" > /dev/null; then
+  x-terminal-emulator -e ./Actor
+elif type "gnome-terminal" > /dev/null; then
+  gnome-terminal -e ./Actor
+else
+  "Aborting, no terminal launcher found"
+fi
+
 cd $TOPDIR
 done
