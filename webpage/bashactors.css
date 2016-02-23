@@ -1,0 +1,37 @@
+html, body{
+	height: 100%;
+}
+
+body {
+	background: url("./background.png");
+	font-family: 'Limelight',cursive,sans-serif;
+	margin:0;
+}
+
+p {
+	font-family: 'Merriweather',sans-serif;
+}
+
+h2 {
+	font-family: 'Merriweather',sans-serif;
+	font-size: 100%;
+}
+
+#main {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+#example {
+	background-color: #efeff5;
+	width: 30em;
+	padding: 1em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 600%;
+}
